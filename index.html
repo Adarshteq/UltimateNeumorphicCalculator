@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Neumorphic Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="history-sidebar" id="historySidebar">
+            <div class="sidebar-header">
+                <h3>Calculation History</h3>
+                <button class="close-sidebar">&times;</button>
+            </div>
+            <div class="history-search">
+                <input type="text" id="historySearch" placeholder="Search history...">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul class="history-list" id="historyList"></ul>
+            <button class="clear-history">Clear History</button>
+        </div>
+        
+        <div class="calculator" id="calc">
+            <div class="toggle">
+                <div class="theme-switch-wrapper">
+                    <span class="mode-label">Light</span>
+                    <label class='theme-switch' for='checkbox'>
+                        <input id='checkbox' type='checkbox' aria-label='Toggle dark mode'>
+                        <div class='slider round'></div>
+                    </label>
+                    <span class="mode-label">Dark</span>
+                    
+                    <div class="color-picker">
+                        <input type="color" id="accentColor" value="#5d9cec">
+                        <label for="accentColor">Accent</label>
+                    </div>
+                </div>
+                <div class="mode-toggle">
+                    <button class="neumorphic scientific-toggle">Scientific</button>
+                </div>
+            </div>
+            
+            <div class="voice-controls">
+                <button id="voiceInput" class="neumorphic" title="Voice Input">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button id="voiceOutput" class="neumorphic" title="Speak Result">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button id="unitConverter" class="neumorphic" title="Unit Converter">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+                <button id="showHistory" class="neumorphic" title="Show History">
+                    <i class="fas fa-history"></i>
+                </button>
+                <button id="copyResult" class="neumorphic" title="Copy Result">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+            
+            <div class="unit-converter-panel" id="unitConverterPanel">
+                <div class="converter-header">
+                    <h3>Unit Converter</h3>
+                    <button class="close-converter">&times;</button>
+                </div>
+                <div class="converter-content">
+                    <div class="converter-group">
+                        <label>Category:</label>
+                        <select id="converterCategory" aria-label="convertCategory">
+                            <option value="temperature">Temperature</option>
+                            <option value="length">Length</option>
+                            <option value="weight">Weight</option>
+                            <option value="area">Area</option>
+                            <option value="volume">Volume</option>
+                            <option value="currency">Currency</option>
+                        </select>
+                    </div>
+                    <div class="converter-group">
+                        <input type="number" id="converterInput" placeholder="Input value">
+                        <select id="converterFrom" aria-label="convertFrom">
+                            <option value="celsius">°C</option>
+                            <option value="fahrenheit">°F</option>
+                        </select>
+                    </div>
+                    <div class="converter-group">
+                        <input type="text" id="converterOutput" placeholder="Result" readonly>
+                        <select id="converterTo" aria-label="converterTo">
+                            <option value="fahrenheit">°F</option>
+                            <option value="celsius">°C</option>
+                        </select>
+                    </div>
+                    <div id="currencyRates" class="currency-rates">
+                        <div>USD: 1.00</div>
+                        <div>EUR: 0.93</div>
+                        <div>GBP: 0.80</div>
+                    </div>
+                    <button class="neumorphic convert-button">Convert</button>
+                </div>
+            </div>
+            
+            <div class="graph-container" id="graphContainer">
+                <div class="graph-header">
+                    <h3>Function Plotter</h3>
+                    <button class="close-graph">&times;</button>
+                </div>
+                <div class="graph-controls">
+                    <input type="text" id="graphFunction" placeholder="y = x^2">
+                    <button class="neumorphic plot-button">Plot</button>
+                    <button class="neumorphic clear-graph">Clear</button>
+                </div>
+                <canvas id="graphCanvas"></canvas>
+            </div>
+            
+            <div class='history'></div>
+            <div class='display'></div>
+            <div class='live-result'></div>
+            
+            <div class="memory-buttons">
+                <span class='mc neumorphic' title="Memory Clear">MC</span>
+                <span class='mr neumorphic' title="Memory Recall">MR</span>
+                <span class='m-plus neumorphic' title="Memory Add">M+</span>
+                <span class='m-minus neumorphic' title="Memory Subtract">M-</span>
+                <span class='ms neumorphic' title="Memory Store">MS</span>
+            </div>
+            
+            <span class='c neumorphic'>C</span>
+            <span class='backspace neumorphic' title="Backspace">⌫</span>
+            <span class='signed neumorphic'>+/-</span>
+            <span class='percent neumorphic'>%</span>
+            <span class='divide neumorphic'>÷</span>
+            <span class='seven neumorphic'>7</span>
+            <span class='eight neumorphic'>8</span>
+            <span class='nine neumorphic'>9</span>
+            <span class='times neumorphic'>×</span>
+            <span class='four neumorphic'>4</span>
+            <span class='five neumorphic'>5</span>
+            <span class='six neumorphic'>6</span>
+            <span class='minus neumorphic'>-</span>
+            <span class='one neumorphic'>1</span>
+            <span class='two neumorphic'>2</span>
+            <span class='three neumorphic'>3</span>
+            <span class='plus neumorphic'>+</span>
+            <span class='zero neumorphic'>0</span>
+            <span class='decimal neumorphic'>.</span>
+            <span class='equals neumorphic'>=</span>
+            
+            <!-- Scientific buttons -->
+            <div class="scientific-buttons">
+                <span class='sin neumorphic'>sin</span>
+                <span class='cos neumorphic'>cos</span>
+                <span class='tan neumorphic'>tan</span>
+                <span class='sqrt neumorphic'>√</span>
+                <span class='pow neumorphic'>x^y</span>
+                <span class='pi neumorphic'>π</span>
+                <span class='fact neumorphic'>x!</span>
+                <span class='log neumorphic'>log</span>
+                <span class='ln neumorphic'>ln</span>
+                <span class='exp neumorphic'>e^x</span>
+                <span class='graph neumorphic'>Graph</span>
+                <span class='tenx neumorphic'>10^x</span>
+                <span class='mod neumorphic'>mod</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">Copied to clipboard!</div>
+    <div class="ripple-effect"></div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
