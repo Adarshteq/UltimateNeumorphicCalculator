@@ -1,79 +1,78 @@
 ## Ultimate Neumorphic Calculator
 
-![Screenshot 2025-06-18 114224](https://github.com/user-attachments/assets/af672cef-971f-4654-9ac9-5f13c590898d)
+A modern, sleek calculator with neumorphic design, featuring standard and scientific modes, unit conversion, graphing capabilities, voice control, and more.
 
-An advanced neumorphic calculator with modern features including live evaluation, voice control, graphing, unit conversion, and theme customization.
+![Screenshot 2025-07-08 225029](https://github.com/user-attachments/assets/7756e785-a2cd-41c6-a789-a9e84589cc12)
 
 ## Features
 
-✨ **Live Expression Evaluation** - Real-time results as you type  
+Neumorphic UI Design: Soft shadows and highlights for a modern 3D look
 
-🎨 **Multi-Themes with Color Picker** - Choose custom accent colors  
+Light/Dark Mode: Toggle between light and dark themes
 
-🎙️ **Voice Input & Output** - Speak calculations aloud  
+Custom Accent Color: Personalize the calculator with your favorite color
 
-📈 **Graph Plotting** - Visualize equations in scientific mode  
+Scientific Mode: Advanced functions like sin, cos, tan, log, exponents, etc.
 
-📏 **Unit Converter** - Convert between temperature, length, weight, etc.  
+Unit Conversion: Convert between temperature, length, weight, area, volume, and currency
 
-📚 **Calculation History** - Persistent history in a sidebar  
+Graph Plotting: Visualize mathematical functions
 
-🔄 **Drag-and-Drop Reordering** - Customizable button layout  
+Voice Control: Speak calculations and hear results
 
-📱 **Haptic Feedback** - Tactile response on mobile  
+Calculation History: View and search past calculations
 
-🥚 **Easter Eggs** - Hidden surprises (try "5318008")  
+Memory Functions: Store and recall values
+
+Responsive Design: Works on mobile and desktop
+
+Keyboard Support: Use your keyboard for faster input
 
 ## Technologies Used
 
-- HTML5, CSS3 (with CSS Variables for theming)
+HTML5
 
-- JavaScript (ES6+)
+CSS3 (Custom Properties, Grid, Flexbox)
 
-- Web Speech API (for voice control)
+JavaScript (ES6+)
 
-- Chart.js (for graphing)
+Web Speech API for voice control
 
-- Canvas Confetti (for celebration effects)
+Canvas Confetti for celebration effects
 
-- Neumorphic UI Design
+Font Awesome for icons
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Adarshteq/UltimateNeumorphicCalculator.git
-   ```
+1.Clone the repository:
 
-2.Open index.html in your browser
+```bash
+git clone https://github.com/Adarshteq/ultimate-neumorphic-calculator.git
+```
 
-# Usage
+2.Open index.html in your browser.
 
-Basic Operations: Standard calculator functions (+, -, ×, ÷)
+## Usage
 
-Scientific Mode: Toggle with the "Scientific" button
+Click buttons or use keyboard to input calculations
 
-Theme Switching: Toggle between light/dark modes
+Toggle between standard and scientific modes
 
-Color Customization: Use the color picker to change accent colors
+Use the microphone button for voice input
 
-Voice Control: Click the microphone button to speak calculations
+Click the history button to view past calculations
 
-Graphing: In scientific mode, enter equations like "x^2"
+Use the unit converter for various conversions
 
-Unit Conversion: Convert between various units of measurement
+Plot mathematical functions in the graphing mode
 
-# Browser Support
+## Customization
 
-Works on all modern browsers including:
+Toggle between light/dark mode
 
-Chrome
+Change the accent color using the color picker
 
-Firefox
-
-Safari
-
-Edge
+The calculator remembers your preferences between sessions
 
 # License
 
