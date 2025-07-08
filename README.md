@@ -47,7 +47,7 @@ Font Awesome for icons
 1.Clone the repository:
 
 ```bash
-git clone https://github.com/Adarshteq/ultimate-neumorphic-calculator.git
+git clone https://github.com/Adarshteq/UltimateNeumorphicCalculator.git
 ```
 
 2.Open index.html in your browser.
